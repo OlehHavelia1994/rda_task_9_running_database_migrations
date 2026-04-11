@@ -41,7 +41,7 @@ CREATE TABLE ProductInventory (
 
 --changeset olehhavelia:5 labels:0.0.2
 CREATE TABLE Users (
-    ID INT,
+    ID INT AUTO_INCREMENT,
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     Email VARCHAR(50),
@@ -50,7 +50,5 @@ CREATE TABLE Users (
 --rollback DROP TABLE Users;
 
 --changeset olehhavelia:6 labels:0.0.3
-CREATE INDEX idx_email ON Users (Email);
---rollback ALTER TABLE Users DROP INDEX idx_email;
-
-
+CREATE INDEX Email ON Users (Email);
+--rollback DROP INDEX Email ON Users;
